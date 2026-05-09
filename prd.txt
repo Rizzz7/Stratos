@@ -1,0 +1,749 @@
+# STARTOS — Technical Product Requirements Document
+## Theme 7: Bengaluru Misinformation Layer Hackathon Submission
+
+---
+
+# 🎯 EXECUTIVE SUMMARY
+
+**Product Name:** STARTOS
+**Tagline:** The Truth Layer of Namma Bengaluru
+**Build Time:** 4 hours
+**Tech Stack:** Streamlit + Elasticsearch + AWS Bedrock + Python
+**Target:** Working MVP with premium UI/UX
+
+---
+
+# 📋 CORE FUNCTIONALITY
+
+## What STARTOS Does (3-Step Flow)
+
+```
+USER INPUT → SEARCH → VERIFY → DISPLAY VERDICT
+```
+
+### Step 1: User Input
+- User pastes viral claim/WhatsApp forward
+- Example: "BMRCL shutting Purple Line on Tuesday"
+
+### Step 2: Retrieval (Elasticsearch)
+- Search indexed civic sources
+- Return top 5 relevant documents
+- Sources: BMRCL, BBMP, BWSSB, news archives
+
+### Step 3: Verification (AWS Bedrock)
+- Analyze claim vs. evidence
+- Generate authenticity score
+- Provide reasoning with citations
+
+### Step 4: Display
+- Show verdict (VERIFIED/MISLEADING/FALSE/INSUFFICIENT)
+- Display authenticity score (0-100%)
+- List evidence reasoning
+- Cite trusted sources
+
+---
+
+# 🏗️ TECHNICAL ARCHITECTURE
+
+## System Components
+
+```
+┌─────────────────────────────────────────────┐
+│         STREAMLIT UI (Frontend)             │
+│  - Input form                               │
+│  - Loading states                           │
+│  - Verdict display                          │
+└─────────────────┬───────────────────────────┘
+                  │
+                  ▼
+┌─────────────────────────────────────────────┐
+│      PYTHON BACKEND (app.py)                │
+│  - Claim extraction                         │
+│  - Orchestration logic                      │
+└─────────┬──────────────────┬────────────────┘
+          │                  │
+          ▼                  ▼
+┌──────────────────┐  ┌─────────────────────┐
+│  ELASTICSEARCH   │  │   AWS BEDROCK       │
+│  - Document index│  │   - Claude Sonnet   │
+│  - Hybrid search │  │   - Verification AI │
+│  - 50-100 docs   │  │   - Scoring logic   │
+└──────────────────┘  └─────────────────────┘
+```
+
+---
+
+# 🎨 UI/UX SPECIFICATIONS
+
+## Design System
+
+### Color Palette (Exact Hex Codes)
+```css
+--bg-primary: #0B0B0B        /* Matte black background */
+--bg-secondary: #111111      /* Card/container background */
+--text-primary: #FFFFFF      /* Main text */
+--text-secondary: #B8B8B8    /* Subdued text */
+--accent-blue: #2563EB       /* CTAs, links */
+--accent-blue-hover: #3B82F6 /* Hover states */
+--border: #1F1F1F            /* Subtle borders */
+--success: #10B981           /* Verified status */
+--warning: #F59E0B           /* Misleading status */
+--error: #EF4444             /* False status */
+--neutral: #6B7280           /* Insufficient evidence */
+```
+
+### Typography
+```css
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+/* Hierarchy */
+H1 (STARTOS logo): 32px, 600 weight, letter-spacing: -0.02em
+H2 (Section headers): 20px, 500 weight
+Body: 16px, 400 weight, line-height: 1.6
+Caption: 14px, 400 weight, color: text-secondary
+```
+
+### Spacing System
+```
+--space-xs: 8px
+--space-sm: 16px
+--space-md: 24px
+--space-lg: 32px
+--space-xl: 48px
+```
+
+### Component Specs
+
+#### Input Field
+- Width: 100% (max 640px)
+- Height: 120px (multiline textarea)
+- Border: 1px solid #1F1F1F
+- Border-radius: 8px
+- Padding: 16px
+- Focus state: border-color: #2563EB
+
+#### Submit Button
+- Text: "Verify →"
+- Background: #2563EB
+- Padding: 12px 24px
+- Border-radius: 6px
+- Hover: background: #3B82F6
+
+#### Verdict Card
+- Background: #111111
+- Border: 1px solid #1F1F1F
+- Border-radius: 12px
+- Padding: 32px
+- Box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+
+---
+
+# 🖥️ SCREEN SPECIFICATIONS
+
+## Screen 1: Landing Page
+
+### Layout
+```
+┌────────────────────────────────────┐
+│                                    │
+│           STARTOS                  │
+│   The Truth Layer of Namma         │
+│          Bengaluru                 │
+│                                    │
+│  ┌──────────────────────────────┐ │
+│  │ Paste a forwarded claim,     │ │
+│  │ civic alert, or viral        │ │
+│  │ message...                   │ │
+│  │                              │ │
+│  └──────────────────────────────┘ │
+│                                    │
+│         [Verify →]                 │
+│                                    │
+│  Powered by trusted civic and      │
+│  institutional sources             │
+└────────────────────────────────────┘
+```
+
+### Streamlit Implementation
+```python
+st.markdown("<h1 style='text-align: center;'>STARTOS</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #B8B8B8;'>The Truth Layer of Namma Bengaluru</p>", unsafe_allow_html=True)
+
+claim = st.text_area(
+    "",
+    height=120,
+    placeholder="Paste a forwarded claim, civic alert, or viral message...",
+    label_visibility="collapsed"
+)
+
+col1, col2, col3 = st.columns([1, 1, 1])
+with col2:
+    verify_button = st.button("Verify →", use_container_width=True)
+```
+
+## Screen 2: Loading State
+
+### Animation Messages (Rotate Every 2 Seconds)
+1. "Verifying trusted sources..."
+2. "Cross-checking civic records..."
+3. "Authenticating announcements..."
+4. "Evaluating evidence consistency..."
+5. "Searching institutional archives..."
+6. "Ranking source credibility..."
+
+### Streamlit Implementation
+```python
+with st.spinner("Verifying trusted sources..."):
+    # Processing happens here
+    time.sleep(1)  # Simulate processing
+```
+
+## Screen 3: Verdict Page
+
+### Layout Sections
+```
+┌─────────────────────────────────────┐
+│  VERDICT: MISLEADING                │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   │
+│                                     │
+│  Authenticity Score: 34%            │
+│  ▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░        │
+│                                     │
+│  SUMMARY                            │
+│  The claim exaggerates the actual   │
+│  metro maintenance announcement.    │
+│                                     │
+│  WHY THIS VERDICT?                  │
+│  • No matching institutional        │
+│    announcement found               │
+│  • Viral wording exaggerates        │
+│    verified notice                  │
+│  • Trusted archives contradict      │
+│    complete shutdown claim          │
+│                                     │
+│  TRUSTED SOURCES                    │
+│  • BMRCL Official Notice            │
+│  • Deccan Herald Bengaluru          │
+│                                     │
+│  Startos prioritizes trusted        │
+│  institutional evidence over        │
+│  viral forwards.                    │
+└─────────────────────────────────────┘
+```
+
+---
+
+# 💻 TECHNICAL IMPLEMENTATION
+
+## File Structure
+```
+startos/
+├── app.py                 # Main Streamlit app
+├── elastic_search.py      # Elasticsearch client
+├── bedrock_client.py      # AWS Bedrock client
+├── data/
+│   └── civic_sources.json # Sample indexed data
+├── styles/
+│   └── custom.css         # Custom Streamlit styling
+├── requirements.txt       # Python dependencies
+└── README.md             # Setup instructions
+```
+
+## Requirements.txt
+```
+streamlit==1.31.0
+elasticsearch==8.12.0
+boto3==1.34.0
+python-dotenv==1.0.0
+```
+
+## Core Functions (app.py)
+
+### Function 1: Elasticsearch Search
+```python
+def search_civic_sources(claim: str, top_k: int = 5) -> list:
+    """
+    Search Elasticsearch for relevant civic documents.
+
+    Args:
+        claim: User's claim to verify
+        top_k: Number of top results to return
+
+    Returns:
+        List of dicts with keys: source, text, date, url, score
+    """
+    # Implementation here
+```
+
+### Function 2: Bedrock Verification
+```python
+def verify_with_bedrock(claim: str, evidence_docs: list) -> dict:
+    """
+    Use AWS Bedrock to analyze claim against evidence.
+
+    Args:
+        claim: Original user claim
+        evidence_docs: Retrieved Elasticsearch documents
+
+    Returns:
+        {
+            'verdict': 'VERIFIED|MISLEADING|FALSE|INSUFFICIENT',
+            'score': 0-100,
+            'summary': 'Brief explanation',
+            'reasoning': ['Bullet point 1', 'Bullet point 2'],
+            'sources': ['Source 1', 'Source 2']
+        }
+    """
+    # Implementation here
+```
+
+### Function 3: Display Verdict
+```python
+def display_verdict(result: dict):
+    """
+    Render the verdict page with styling.
+
+    Args:
+        result: Output from verify_with_bedrock()
+    """
+    # Implementation here
+```
+
+## Bedrock Prompt Template
+
+```python
+VERIFICATION_PROMPT = """You are STARTOS, a civic information verification system for Bengaluru.
+
+CLAIM TO VERIFY:
+{claim}
+
+EVIDENCE FROM TRUSTED SOURCES:
+{evidence}
+
+TASK:
+Analyze the claim against the evidence and provide:
+
+1. VERDICT: Choose ONE:
+   - VERIFIED (claim is supported by official sources)
+   - MISLEADING (claim exaggerates or distorts facts)
+   - FALSE (claim contradicts official sources)
+   - INSUFFICIENT (not enough evidence to determine)
+
+2. AUTHENTICITY SCORE: 0-100 (how accurate is the claim?)
+
+3. SUMMARY: One sentence explaining the verdict
+
+4. REASONING: 3-4 bullet points explaining why
+
+5. SOURCES: List which sources were most relevant
+
+RESPONSE FORMAT (JSON):
+{{
+    "verdict": "VERIFIED",
+    "score": 85,
+    "summary": "Brief explanation",
+    "reasoning": ["Point 1", "Point 2", "Point 3"],
+    "sources": ["BMRCL Official", "Deccan Herald"]
+}}
+
+Be factual, neutral, and evidence-focused.
+"""
+```
+
+---
+
+# 📊 SAMPLE DATA (civic_sources.json)
+
+## Structure
+```json
+[
+  {
+    "source": "BMRCL Official Twitter",
+    "text": "Purple Line services running normally. No closures planned for May 9-10, 2025.",
+    "date": "2025-05-08",
+    "url": "https://twitter.com/OfficialBMRCL/status/xxx",
+    "category": "metro"
+  },
+  {
+    "source": "BWSSB Notice",
+    "text": "Water supply disruption in HSR Layout, Sector 1-4 on May 10, 8 AM - 2 PM due to maintenance.",
+    "date": "2025-05-07",
+    "url": "https://bwssb.gov.in/notices/may2025",
+    "category": "water"
+  }
+]
+```
+
+## Data Collection Strategy (Quick 30 mins)
+1. **BMRCL**: Last 10 tweets from @OfficialBMRCL
+2. **BWSSB**: 5 recent water notices
+3. **BBMP**: 5 recent civic announcements
+4. **News**: 10 Deccan Herald/TOI Bengaluru headlines
+5. **BESCOM**: 5 power outage notices
+
+**Total: ~35-50 documents (sufficient for demo)**
+
+---
+
+# 🚀 IMPLEMENTATION CHECKLIST
+
+## Phase 1: Setup (30 mins)
+- [ ] Create virtual environment
+- [ ] Install dependencies
+- [ ] Set up AWS Bedrock credentials
+- [ ] Set up Elasticsearch connection
+- [ ] Test connections with simple queries
+
+## Phase 2: Data (30 mins)
+- [ ] Collect 50 civic source documents
+- [ ] Format as JSON
+- [ ] Index into Elasticsearch
+- [ ] Test search queries
+
+## Phase 3: Backend (90 mins)
+- [ ] Implement `search_civic_sources()`
+- [ ] Implement `verify_with_bedrock()`
+- [ ] Test with 3 sample claims
+- [ ] Debug and refine prompts
+
+## Phase 4: Frontend (60 mins)
+- [ ] Build Streamlit UI (landing page)
+- [ ] Add loading states
+- [ ] Build verdict display
+- [ ] Apply custom CSS styling
+
+## Phase 5: Polish (30 mins)
+- [ ] Test end-to-end flow
+- [ ] Screenshot working examples
+- [ ] Prepare demo script
+- [ ] Create backup screenshots
+
+---
+
+# 🎬 DEMO SCRIPT
+
+## Test Cases (Prepare These)
+
+### Case 1: FALSE Claim
+**Input:** "BMRCL shutting down Purple Line completely on Tuesday"
+**Expected:** FALSE verdict, ~20% score
+
+### Case 2: VERIFIED Claim
+**Input:** "Water supply disruption in HSR Layout on May 10"
+**Expected:** VERIFIED verdict, ~90% score
+
+### Case 3: MISLEADING Claim
+**Input:** "BBMP banned all plastic items from cafes immediately"
+**Expected:** MISLEADING verdict, ~40% score
+
+---
+
+# 🎨 CUSTOM CSS (styles/custom.css)
+
+```css
+/* Dark theme base */
+.stApp {
+    background-color: #0B0B0B;
+}
+
+/* Remove Streamlit branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+
+/* Center content */
+.block-container {
+    max-width: 720px;
+    padding-top: 3rem;
+}
+
+/* Custom button styling */
+.stButton > button {
+    background-color: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.stButton > button:hover {
+    background-color: #3B82F6;
+}
+
+/* Textarea styling */
+.stTextArea > div > div > textarea {
+    background-color: #111111;
+    border: 1px solid #1F1F1F;
+    color: #FFFFFF;
+    border-radius: 8px;
+}
+
+/* Verdict card */
+.verdict-card {
+    background-color: #111111;
+    border: 1px solid #1F1F1F;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* Verdict status colors */
+.verdict-verified {
+    color: #10B981;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.verdict-misleading {
+    color: #F59E0B;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.verdict-false {
+    color: #EF4444;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.verdict-insufficient {
+    color: #6B7280;
+    font-size: 24px;
+    font-weight: 600;
+}
+```
+
+---
+
+# 🔧 ELASTICSEARCH INDEX SETUP
+
+## Index Configuration
+```json
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "analysis": {
+      "analyzer": {
+        "civic_analyzer": {
+          "type": "standard",
+          "stopwords": "_english_"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "source": {"type": "keyword"},
+      "text": {"type": "text", "analyzer": "civic_analyzer"},
+      "date": {"type": "date"},
+      "url": {"type": "keyword"},
+      "category": {"type": "keyword"}
+    }
+  }
+}
+```
+
+## Search Query Template
+```python
+{
+    "query": {
+        "multi_match": {
+            "query": claim,
+            "fields": ["text^2", "source"],
+            "type": "best_fields",
+            "fuzziness": "AUTO"
+        }
+    },
+    "size": 5,
+    "sort": [
+        {"_score": "desc"},
+        {"date": "desc"}
+    ]
+}
+```
+
+---
+
+# ⚠️ CRITICAL SUCCESS FACTORS
+
+## What Makes This Win
+
+### 1. Premium UI/UX (30%)
+- Dark, minimal, professional design
+- Smooth transitions
+- Premium typography
+- No clutter
+
+### 2. Working Demo (40%)
+- Actually verifies claims
+- Shows real sources
+- Reasonable verdicts
+- Fast response time
+
+### 3. Storytelling (20%)
+- Relatable problem (WhatsApp forwards)
+- Clear solution narrative
+- Live demo confidence
+
+### 4. Technical Depth (10%)
+- Elasticsearch integration
+- AWS Bedrock usage
+- Prompt engineering quality
+
+---
+
+# 🎯 MINIMUM VIABLE PRODUCT
+
+## If Time is Running Out
+
+### Must-Have Features
+✅ Text input for claims
+✅ Elasticsearch search (even with 20 docs)
+✅ Bedrock verification
+✅ Display verdict with score
+✅ Dark theme styling
+
+### Nice-to-Have (Skip if Needed)
+⏭️ Loading animations
+⏭️ Complex CSS
+⏭️ 100+ documents
+⏭️ Multiple verdict categories
+
+### Backup Plan
+If tech fails, prepare:
+- Screenshots of working prototype
+- Pre-recorded demo video
+- Manual walkthrough with fake data
+
+---
+
+# 📝 GITHUB COPILOT PROMPTS
+
+## Copy-Paste These Directly
+
+### Prompt 1: Elasticsearch Client
+```
+Create a Python class ElasticSearchClient with:
+- connect() method to connect to Elasticsearch
+- index_documents() to bulk index civic sources from JSON
+- search_claim() to search for relevant documents given a claim
+- Use elasticsearch-py library
+```
+
+### Prompt 2: Bedrock Client
+```
+Create a Python function verify_claim_with_bedrock() that:
+- Takes a claim string and list of evidence documents
+- Calls AWS Bedrock Claude Sonnet model
+- Uses a prompt template to analyze claim vs evidence
+- Returns a dict with verdict, score, summary, reasoning, sources
+- Handle JSON parsing from model response
+```
+
+### Prompt 3: Streamlit UI
+```
+Create a Streamlit app with:
+- Dark theme (#0B0B0B background)
+- Center-aligned layout (max 720px width)
+- Title "STARTOS" and subtitle
+- Large textarea for claim input
+- "Verify →" button
+- Display verdict in a card with color-coded status
+- Show authenticity score as progress bar
+- List reasoning bullets and sources
+```
+
+### Prompt 4: Custom CSS
+```
+Create custom CSS for Streamlit app with:
+- Dark theme (background: #0B0B0B, cards: #111111)
+- Custom button styling (blue: #2563EB)
+- Verdict status colors (verified: green, false: red, misleading: yellow)
+- Premium Inter font
+- Smooth transitions
+- Hide Streamlit branding
+```
+
+---
+
+# 🏆 WINNING PITCH TEMPLATE
+
+## 2-Minute Script
+
+**[Slide 1: Problem]**
+"Every day, Bengaluru citizens receive dozens of viral messages on WhatsApp. Metro closures. Water cuts. Civic bans. Half are real, half are exaggerated, some are completely fake. My own family group has 10 such forwards daily."
+
+**[Slide 2: Solution]**
+"I built STARTOS - The Truth Layer of Namma Bengaluru. It verifies viral claims against official BMRCL, BBMP, BWSSB sources in seconds."
+
+**[Slide 3: Live Demo]**
+*Type claim: "BMRCL shutting Purple Line Tuesday"*
+*Show results: FALSE - 22% Authentic*
+*Highlight: Evidence reasoning, official sources cited*
+
+**[Slide 4: Tech]**
+"Built with Elasticsearch for document retrieval, AWS Bedrock for AI verification, and designed to resist prompt injection by grounding all verdicts in trusted institutional sources."
+
+**[Closing]**
+"STARTOS stops misinformation before it spreads. One verified claim at a time."
+
+---
+
+# ✅ FINAL PRE-FLIGHT CHECKLIST
+
+## 30 Minutes Before Submission
+- [ ] Test with 5 different claims
+- [ ] Screenshot all successful results
+- [ ] Verify AWS/Elastic still connected
+- [ ] Practice pitch 3 times
+- [ ] Backup code to GitHub
+- [ ] Export demo video (1 min)
+- [ ] Have Plan B ready (screenshots)
+
+---
+
+# 🎯 SUCCESS METRICS
+
+## How to Know You're Winning
+
+✅ UI looks premium and professional
+✅ Claim → Verdict flow works end-to-end
+✅ At least 3 test cases work correctly
+✅ Search returns relevant sources
+✅ Verdict makes logical sense
+✅ You can demo confidently without crashing
+✅ Styling is polished (dark theme applied)
+
+**If 6/7 above are true, you have a WINNING submission.**
+
+---
+
+# 🚨 EMERGENCY CONTACTS
+
+## If You Get Stuck
+
+### Elasticsearch Not Working?
+→ Use Python dict/JSON file instead
+→ Implement simple keyword search
+
+### Bedrock Not Working?
+→ Use Claude API directly (api.anthropic.com)
+→ Or hardcode verdict logic with rules
+
+### Streamlit Crashing?
+→ Run as simple Python script
+→ Show terminal output
+→ Use Jupyter notebook
+
+### No Time for UI?
+→ Focus on working backend
+→ Show results in terminal
+→ Judges care about logic > pretty UI
+
+---
+
+**THIS PRD IS YOUR BLUEPRINT. FOLLOW IT STEP-BY-STEP. YOU GOT THIS! 🚀**
+
+**NOW: COPY THIS TO COPILOT AND START CODING!**

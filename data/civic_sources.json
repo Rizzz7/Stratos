@@ -1,0 +1,387 @@
+[
+  {
+    "title": "BMRCL: Purple Line interval adjustment for track inspection",
+    "source": "BMRCL",
+    "content": "Purple Line services will operate at 12–15 minute intervals between 10:00 and 15:00 due to scheduled track inspection near Indiranagar. Regular frequency resumes after 15:00.",
+    "date": "2026-05-07",
+    "category": "Metro Update"
+  },
+  {
+    "title": "BWSSB: Water supply interruption in Indiranagar 1st Stage",
+    "source": "BWSSB",
+    "content": "Water supply will be interrupted in Indiranagar 1st Stage from 08:00 to 14:00 due to valve replacement and pipeline maintenance. Residents are advised to store water in advance.",
+    "date": "2026-05-08",
+    "category": "Water Supply"
+  },
+  {
+    "title": "BESCOM: Scheduled power outage in Koramangala 3rd Block",
+    "source": "BESCOM",
+    "content": "Power supply will be suspended in Koramangala 3rd Block from 09:30 to 12:30 for transformer servicing and line upkeep.",
+    "date": "2026-05-08",
+    "category": "Power Outage"
+  },
+  {
+    "title": "BBMP: Road resurfacing work at Rajajinagar 1st Block",
+    "source": "BBMP",
+    "content": "Road resurfacing will be carried out in Rajajinagar 1st Block between 09:00 and 18:00. Temporary diversions will be in place on internal roads.",
+    "date": "2026-05-09",
+    "category": "Civic Announcement"
+  },
+  {
+    "title": "Bengaluru Traffic Police: Diversion near Hebbal Flyover",
+    "source": "Bengaluru Traffic Police",
+    "content": "Traffic diversion will be implemented near Hebbal Flyover from 22:00 to 05:00 due to repair work. Motorists are advised to follow signboards and use service roads.",
+    "date": "2026-05-09",
+    "category": "Traffic Advisory"
+  },
+  {
+    "title": "Karnataka Disaster Management Authority: Heavy rainfall advisory",
+    "source": "Karnataka Disaster Management Authority",
+    "content": "Heavy rainfall is likely in Bengaluru Urban and nearby districts over the next 24–48 hours. Residents in low-lying areas should remain alert for waterlogging.",
+    "date": "2026-05-09",
+    "category": "Weather Alert"
+  },
+  {
+    "title": "BMRCL: Green Line station escalator maintenance",
+    "source": "BMRCL",
+    "content": "Escalator maintenance will be undertaken at Yelachenahalli station between 11:00 and 16:00. Passengers are requested to use stairs or lifts during this period.",
+    "date": "2026-05-10",
+    "category": "Metro Update"
+  },
+  {
+    "title": "BWSSB: Low water pressure in RT Nagar",
+    "source": "BWSSB",
+    "content": "Low water pressure is expected in RT Nagar between 06:00 and 09:00 due to pump maintenance at the local booster station.",
+    "date": "2026-05-10",
+    "category": "Water Supply"
+  },
+  {
+    "title": "BESCOM: Feeder maintenance in Electronic City Phase 1",
+    "source": "BESCOM",
+    "content": "Power supply will be disrupted in Electronic City Phase 1 from 10:00 to 12:00 for feeder maintenance and safety checks.",
+    "date": "2026-05-10",
+    "category": "Power Outage"
+  },
+  {
+    "title": "BBMP: Solid waste collection timing update in Basavanagudi",
+    "source": "BBMP",
+    "content": "Dry waste collection in Basavanagudi will be carried out between 06:00 and 08:00 starting this week. Residents are requested to hand over segregated waste during collection hours.",
+    "date": "2026-05-10",
+    "category": "Civic Announcement"
+  },
+  {
+    "title": "Bengaluru Traffic Police: Advisory for MG Road event traffic",
+    "source": "Bengaluru Traffic Police",
+    "content": "Temporary traffic restrictions will be in effect near MG Road between 17:00 and 21:00 due to a public event. Use alternate routes via Residency Road and Brigade Road.",
+    "date": "2026-05-10",
+    "category": "Traffic Advisory"
+  },
+  {
+    "title": "BMRCL: Purple Line late evening service extension",
+    "source": "BMRCL",
+    "content": "Purple Line services will run till 23:30 on Saturday to facilitate event dispersal. Last train departures will be adjusted accordingly.",
+    "date": "2026-05-11",
+    "category": "Metro Update"
+  },
+  {
+    "title": "BWSSB: Tanker deployment in JP Nagar 6th Phase",
+    "source": "BWSSB",
+    "content": "Additional water tankers will be deployed in JP Nagar 6th Phase between 09:00 and 17:00 due to localized pipeline repairs.",
+    "date": "2026-05-11",
+    "category": "Water Supply"
+  },
+  {
+    "title": "BESCOM: Planned outage in Jayanagar 4th Block",
+    "source": "BESCOM",
+    "content": "A planned power outage is scheduled in Jayanagar 4th Block from 09:00 to 13:00 for line maintenance and pole replacement.",
+    "date": "2026-05-11",
+    "category": "Power Outage"
+  },
+  {
+    "title": "BBMP: Drain desilting in Mahadevapura Zone",
+    "source": "BBMP",
+    "content": "Drain desilting will be carried out in Mahadevapura Zone over the next two days. Some internal roads may experience partial access restrictions.",
+    "date": "2026-05-11",
+    "category": "Civic Announcement"
+  },
+  {
+    "title": "Bengaluru Traffic Police: Advisory for Silk Board junction",
+    "source": "Bengaluru Traffic Police",
+    "content": "Expect slow-moving traffic at Silk Board junction between 08:00 and 11:00 due to junction improvement work. Use Hosur Road service lanes where possible.",
+    "date": "2026-05-11",
+    "category": "Traffic Advisory"
+  },
+  {
+    "title": "Karnataka Disaster Management Authority: Thunderstorm watch",
+    "source": "Karnataka Disaster Management Authority",
+    "content": "Thunderstorms with gusty winds are likely in Bengaluru this evening. Citizens are advised to avoid open areas and secure loose outdoor items.",
+    "date": "2026-05-11",
+    "category": "Weather Alert"
+  },
+  {
+    "title": "BMRCL: Crowd management at Baiyappanahalli station",
+    "source": "BMRCL",
+    "content": "Additional queue management will be in place at Baiyappanahalli station during evening peak hours. Passengers are requested to follow staff instructions.",
+    "date": "2026-05-12",
+    "category": "Metro Update"
+  },
+  {
+    "title": "BWSSB: Pipeline repair in HSR Layout Sector 2",
+    "source": "BWSSB",
+    "content": "Water supply will be interrupted in HSR Layout Sector 2 from 07:00 to 12:00 due to pipeline repair and leak rectification.",
+    "date": "2026-05-12",
+    "category": "Water Supply"
+  },
+  {
+    "title": "BESCOM: Short outage in Malleswaram 8th Cross",
+    "source": "BESCOM",
+    "content": "Power supply will be interrupted in Malleswaram 8th Cross from 11:00 to 11:45 for emergency line repairs.",
+    "date": "2026-05-12",
+    "category": "Power Outage"
+  },
+  {
+    "title": "BBMP: Park maintenance closure at Cubbon Park Gate 3",
+    "source": "BBMP",
+    "content": "Gate 3 walking track at Cubbon Park will be closed between 06:00 and 10:00 for maintenance and surface repairs.",
+    "date": "2026-05-12",
+    "category": "Civic Announcement"
+  },
+  {
+    "title": "Bengaluru Traffic Police: Airport Road lane closure",
+    "source": "Bengaluru Traffic Police",
+    "content": "One lane near Hebbal will be closed between 22:00 and 05:00 for signage installation. Expect minor delays.",
+    "date": "2026-05-12",
+    "category": "Traffic Advisory"
+  },
+  {
+    "title": "BMRCL: Green Line frequency change due to signaling checks",
+    "source": "BMRCL",
+    "content": "Green Line trains will operate at 12-minute intervals between 09:00 and 13:00 due to signaling checks. Normal schedule resumes thereafter.",
+    "date": "2026-05-13",
+    "category": "Metro Update"
+  },
+  {
+    "title": "BWSSB: Reservoir level update and supply advisory",
+    "source": "BWSSB",
+    "content": "Reservoir levels remain stable; no supply restrictions are planned. Routine maintenance may affect pressure in select wards during early hours.",
+    "date": "2026-05-13",
+    "category": "Water Supply"
+  },
+  {
+    "title": "BESCOM: Substation upgrade in Whitefield",
+    "source": "BESCOM",
+    "content": "Power supply in Whitefield will be interrupted from 13:00 to 16:00 for substation upgrade and protection testing.",
+    "date": "2026-05-13",
+    "category": "Power Outage"
+  },
+  {
+    "title": "BBMP: Public health advisory on dengue prevention",
+    "source": "BBMP",
+    "content": "Residents are advised to prevent water stagnation and use mosquito control measures. Field teams will conduct inspections in selected wards this week.",
+    "date": "2026-05-13",
+    "category": "Civic Announcement"
+  },
+  {
+    "title": "Bengaluru Traffic Police: ORR congestion advisory",
+    "source": "Bengaluru Traffic Police",
+    "content": "Expect congestion on Outer Ring Road near Bellandur between 18:00 and 20:30 due to road restoration work. Use Sarjapur Road as an alternative.",
+    "date": "2026-05-13",
+    "category": "Traffic Advisory"
+  },
+  {
+    "title": "Karnataka Disaster Management Authority: Waterlogging caution",
+    "source": "Karnataka Disaster Management Authority",
+    "content": "Localized waterlogging is possible in low-lying areas during evening showers. Avoid underpasses and follow official traffic advisories.",
+    "date": "2026-05-13",
+    "category": "Weather Alert"
+  },
+  {
+    "title": "BMRCL: Purple Line station cleaning activity",
+    "source": "BMRCL",
+    "content": "Station cleaning will be carried out at MG Road and Trinity between 23:00 and 01:00. Passenger movement may be guided by staff.",
+    "date": "2026-05-14",
+    "category": "Metro Update"
+  },
+  {
+    "title": "BWSSB: Valve replacement at Jayanagar 5th Block",
+    "source": "BWSSB",
+    "content": "Water supply will be interrupted in Jayanagar 5th Block from 08:00 to 13:00 due to valve replacement work.",
+    "date": "2026-05-14",
+    "category": "Water Supply"
+  },
+  {
+    "title": "BESCOM: Preventive maintenance in HSR Layout",
+    "source": "BESCOM",
+    "content": "Power supply will be suspended in HSR Layout Sector 4 from 10:00 to 13:00 for preventive maintenance of distribution lines.",
+    "date": "2026-05-14",
+    "category": "Power Outage"
+  },
+  {
+    "title": "BBMP: Streetlight repair drive in Indiranagar",
+    "source": "BBMP",
+    "content": "Streetlight repair work will be carried out in Indiranagar between 20:00 and 23:00. Temporary lane closures may occur in select streets.",
+    "date": "2026-05-14",
+    "category": "Civic Announcement"
+  },
+  {
+    "title": "Bengaluru Traffic Police: Advisory for Marathahalli bridge work",
+    "source": "Bengaluru Traffic Police",
+    "content": "Traffic diversions will be implemented near Marathahalli bridge from 22:00 to 04:00 due to structural maintenance. Use alternate routes via HAL.",
+    "date": "2026-05-14",
+    "category": "Traffic Advisory"
+  },
+  {
+    "title": "BMRCL: Increased intervals on Purple Line due to maintenance",
+    "source": "BMRCL",
+    "content": "Purple Line trains will operate at 15-minute intervals between 11:00 and 14:00 to facilitate maintenance near Mysore Road.",
+    "date": "2026-05-15",
+    "category": "Metro Update"
+  },
+  {
+    "title": "BWSSB: Pressure fluctuation in KR Puram",
+    "source": "BWSSB",
+    "content": "Consumers in KR Puram may experience low pressure between 05:30 and 08:30 due to pump maintenance at the overhead reservoir.",
+    "date": "2026-05-15",
+    "category": "Water Supply"
+  },
+  {
+    "title": "BESCOM: Outage for cable replacement in Malleshwaram",
+    "source": "BESCOM",
+    "content": "A power outage is scheduled in Malleshwaram 10th Cross from 09:00 to 11:30 for cable replacement.",
+    "date": "2026-05-15",
+    "category": "Power Outage"
+  },
+  {
+    "title": "BBMP: Tree trimming along Bannerghatta Road",
+    "source": "BBMP",
+    "content": "Tree trimming and pruning will be undertaken along Bannerghatta Road between 07:00 and 12:00. Minor traffic slowdowns are expected.",
+    "date": "2026-05-15",
+    "category": "Civic Announcement"
+  },
+  {
+    "title": "Bengaluru Traffic Police: Advisory for race event near NICE Road",
+    "source": "Bengaluru Traffic Police",
+    "content": "Traffic restrictions will be in place near NICE Road between 05:30 and 09:30 for a scheduled public event. Use alternate routes via Kanakapura Road.",
+    "date": "2026-05-15",
+    "category": "Traffic Advisory"
+  },
+  {
+    "title": "Karnataka Disaster Management Authority: Heat advisory",
+    "source": "Karnataka Disaster Management Authority",
+    "content": "Daytime temperatures may rise above normal. Residents are advised to stay hydrated and avoid prolonged outdoor exposure during peak hours.",
+    "date": "2026-05-15",
+    "category": "Weather Alert"
+  },
+  {
+    "title": "BMRCL: Station lift maintenance at Banashankari",
+    "source": "BMRCL",
+    "content": "Lift maintenance will be conducted at Banashankari station between 12:00 and 16:00. Passengers are requested to use alternate access routes.",
+    "date": "2026-05-16",
+    "category": "Metro Update"
+  },
+  {
+    "title": "BWSSB: Water supply interruption in Kalyan Nagar",
+    "source": "BWSSB",
+    "content": "Water supply will be interrupted in Kalyan Nagar from 07:00 to 12:00 due to interconnection work on the main line.",
+    "date": "2026-05-16",
+    "category": "Water Supply"
+  },
+  {
+    "title": "BESCOM: Scheduled outage in Sadashivanagar",
+    "source": "BESCOM",
+    "content": "Power supply will be suspended in Sadashivanagar from 10:00 to 13:00 for periodic line inspection and tightening.",
+    "date": "2026-05-16",
+    "category": "Power Outage"
+  },
+  {
+    "title": "BBMP: Footpath repair near Church Street",
+    "source": "BBMP",
+    "content": "Footpath repair will be undertaken near Church Street between 08:00 and 17:00. Pedestrians are advised to use the alternate walkway.",
+    "date": "2026-05-16",
+    "category": "Civic Announcement"
+  },
+  {
+    "title": "Bengaluru Traffic Police: Advisory for Cubbon Road closure",
+    "source": "Bengaluru Traffic Police",
+    "content": "Cubbon Road will have partial closure from 06:00 to 10:00 for road marking work. Expect diversions via Infantry Road.",
+    "date": "2026-05-16",
+    "category": "Traffic Advisory"
+  },
+  {
+    "title": "BMRCL: Passenger advisory for Kengeri station",
+    "source": "BMRCL",
+    "content": "Additional queue management will be in place at Kengeri station during evening peak hours. Follow signage and staff directions.",
+    "date": "2026-05-17",
+    "category": "Metro Update"
+  },
+  {
+    "title": "BWSSB: Water supply interruption in Vijayanagar",
+    "source": "BWSSB",
+    "content": "Water supply will be interrupted in Vijayanagar from 06:00 to 11:00 due to pipeline repair work near the main junction.",
+    "date": "2026-05-17",
+    "category": "Water Supply"
+  },
+  {
+    "title": "BESCOM: Planned power outage in Ulsoor",
+    "source": "BESCOM",
+    "content": "Power supply in Ulsoor will be interrupted from 09:30 to 12:30 for line maintenance and transformer testing.",
+    "date": "2026-05-17",
+    "category": "Power Outage"
+  },
+  {
+    "title": "BBMP: Market sanitation drive at KR Market",
+    "source": "BBMP",
+    "content": "A sanitation drive will be conducted at KR Market between 05:00 and 10:00. Vendors are requested to cooperate with field staff.",
+    "date": "2026-05-17",
+    "category": "Civic Announcement"
+  },
+  {
+    "title": "Bengaluru Traffic Police: Advisory near Silk Board due to resurfacing",
+    "source": "Bengaluru Traffic Police",
+    "content": "Traffic diversion will be in effect near Silk Board from 22:00 to 04:00 for resurfacing work. Use alternate routes via HSR Layout.",
+    "date": "2026-05-17",
+    "category": "Traffic Advisory"
+  },
+  {
+    "title": "Karnataka Disaster Management Authority: Rainfall update",
+    "source": "Karnataka Disaster Management Authority",
+    "content": "Moderate rainfall is expected in Bengaluru over the next two days. Residents should remain cautious of slippery roads and low visibility.",
+    "date": "2026-05-17",
+    "category": "Weather Alert"
+  },
+  {
+    "title": "BMRCL: Service advisory for Green Line stations",
+    "source": "BMRCL",
+    "content": "Green Line services will have minor delays between 09:00 and 11:00 due to scheduled maintenance near Lalbagh station.",
+    "date": "2026-05-18",
+    "category": "Metro Update"
+  },
+  {
+    "title": "BWSSB: Supply restoration update for Hennur",
+    "source": "BWSSB",
+    "content": "Water supply in Hennur is expected to resume by 18:00 following repair completion at the main distribution line.",
+    "date": "2026-05-18",
+    "category": "Water Supply"
+  },
+  {
+    "title": "BESCOM: Outage for pole replacement in Banashankari",
+    "source": "BESCOM",
+    "content": "Power supply will be suspended in Banashankari 3rd Stage from 10:00 to 12:00 for pole replacement and line shifting.",
+    "date": "2026-05-18",
+    "category": "Power Outage"
+  },
+  {
+    "title": "BBMP: Parking restrictions for drain work in HSR Layout",
+    "source": "BBMP",
+    "content": "On-street parking will be restricted in HSR Layout Sector 1 between 08:00 and 16:00 due to drain maintenance work.",
+    "date": "2026-05-18",
+    "category": "Civic Announcement"
+  },
+  {
+    "title": "Bengaluru Traffic Police: Advisory for Ring Road congestion",
+    "source": "Bengaluru Traffic Police",
+    "content": "Expect congestion on Outer Ring Road near Marathahalli between 18:00 and 20:00 due to lane marking work. Use alternate routes where possible.",
+    "date": "2026-05-18",
+    "category": "Traffic Advisory"
+  }
+]
