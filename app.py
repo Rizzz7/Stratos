@@ -375,13 +375,13 @@ def build_result(response_text: str, documents: List[Dict[str, Any]]) -> Dict[st
 
 
 def main() -> None:
-    st.set_page_config(page_title="STARTOS", layout="centered")
+    st.set_page_config(page_title="STRATOS", layout="centered")
     apply_styles()
 
     st.markdown(
         """
         <div class="hero">
-          <div class="hero-title">STARTOS</div>
+          <div class="hero-title">STRATOS</div>
           <div class="hero-subtitle">The Truth Layer of Namma Bengaluru</div>
           <div class="live-badge">Live Civic Verification Engine</div>
         </div>
@@ -470,7 +470,7 @@ def main() -> None:
     st.markdown(
         """
         <div class='divider'></div>
-        <div class='footer'>Startos prioritizes trusted institutional evidence over viral forwards.</div>
+        <div class='footer'>STRATOS prioritizes trusted institutional evidence over viral forwards.</div>
         <div class='footer'>Powered by Elasticsearch + AWS Bedrock</div>
         """,
         unsafe_allow_html=True,
